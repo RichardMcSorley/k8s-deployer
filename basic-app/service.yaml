@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: youtube-sub
+  labels:
+    app: youtube-sub
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  - name: socketio
+    port: 7000
+    targetPort: 7000
+  selector:
+    app: youtube-sub
